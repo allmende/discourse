@@ -17,6 +17,8 @@ services:
     networks:
       - frontend
       - backend
+    environment:
+      - DISCOURSE_HOSTNAME=$VIRTUAL_HOST
   sidekiq:
     image: indiehosters/discourse
     command: bundle exec sidekiq -q critical -q default -q low -v
