@@ -12,7 +12,7 @@ services:
       - postgres
       - redis
     env_file:
-      - ./env
+      - ./postgres.env
       - ./frontend.env
     networks:
       - frontend
@@ -32,7 +32,7 @@ services:
   postgres:
     image: postgres:9.4.8
     env_file:
-      - ./env
+      - ./postgres.env
     volumes:
       - /srv/docker-state/allmende-discourse/postgres:/var/lib/postgresql/data
     networks:
